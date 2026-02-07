@@ -1,0 +1,159 @@
+meta {
+  name: Get all courses with teachers - public
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseURL}}/api/courses/custom/teachers
+  body: none
+  auth: none
+}
+
+script:post-response {
+  // 1. Status code validation
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  // 2. Response body is an array
+  test("Response body is an array", function () {
+      const jsonData = res.getBody();
+      expect(jsonData).to.be.an('array');
+  });
+  
+  // 3. Each course object has required properties
+  test("Each course has required properties", function () {
+      const jsonData = res.getBody();
+      const requiredProperties = ['id', 'documentId', 'Title', 'Description', 'Technology', 'Level', 'enrollments'];
+      
+      jsonData.forEach((course, index) => {
+          requiredProperties.forEach(prop => {
+              expect(course).to.have.property(prop);
+          });
+      });
+  });
+  
+  // 4. Validate that enrollments is an array
+  test("Enrollments is an array for each course", function () {
+      const jsonData = res.getBody();
+      
+      jsonData.forEach((course, index) => {
+          expect(course.enrollments).to.be.an('array', `Enrollments at course index ${index} should be an array`);
+      });
+  });
+  
+  // 5. If enrollments exist, validate each enrollment has required properties
+  test("Each enrollment has required properties", function () {
+      const jsonData = res.getBody();
+      const enrollmentRequiredProperties = ['id', 'documentId', 'role', 'enrollstatus', 'user'];
+      
+      jsonData.forEach((course, courseIndex) => {
+          if (course.enrollments && course.enrollments.length > 0) {
+              course.enrollments.forEach((enrollment, enrollmentIndex) => {
+                  enrollmentRequiredProperties.forEach(prop => {
+                      expect(enrollment).to.have.property(prop);
+                  });
+              });
+          }
+      });
+  });
+  
+  // 6. Response time validation
+  test("Response time is under 2000ms", function () {
+      expect(res.getResponseTime()).to.be.below(2000);
+  });
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
+
+example {
+  name: Get all courses with teachers - public
+  
+  request: {
+    url: {{baseURL}}/api/courses/custom/extended
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    headers: {
+      Content-Security-Policy: img-src 'self' data: blob: https://market-assets.strapi.io strapi-ai-staging.s3.us-east-1.amazonaws.com strapi-ai-production.s3.us-east-1.amazonaws.com;media-src 'self' data: blob: strapi-ai-staging.s3.us-east-1.amazonaws.com strapi-ai-production.s3.us-east-1.amazonaws.com;connect-src 'self' https:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'
+      Referrer-Policy: no-referrer
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      X-Content-Type-Options: nosniff
+      X-DNS-Prefetch-Control: off
+      X-Download-Options: noopen
+      X-Frame-Options: SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies: none
+      Vary: Origin
+      Access-Control-Allow-Origin: 
+      Access-Control-Allow-Credentials: true
+      Content-Type: application/json; charset=utf-8
+      X-Powered-By: Strapi <strapi.io>
+      Content-Length: 820
+      Date: Thu, 29 Jan 2026 18:27:12 GMT
+      Connection: keep-alive
+      Keep-Alive: timeout=5
+    }
+  
+    status: {
+      code: OK
+      text: 200
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+            {
+                "id": 3,
+                "documentId": "pedvbl3hfn2ishrv154dosgg",
+                "Title": "Node.js Fundamentals",
+                "Description": "Introduction to Node.js, event loop, async programming",
+                "Technology": "Node.js",
+                "Level": "Beginner",
+                "enrollments": []
+            },
+            {
+                "id": 6,
+                "documentId": "ejabswo1qri09tm7d9qz0mlc",
+                "Title": "React",
+                "Description": "OJHkjhn;lhn;lkjnl",
+                "Technology": "React",
+                "Level": "Intermediate",
+                "enrollments": [
+                    {
+                        "id": 5,
+                        "documentId": "ypv2vc66ucy5x382uahcinyq",
+                        "role": "teacher",
+                        "enrollstatus": "active",
+                        "createdAt": "2026-01-28T16:59:10.592Z",
+                        "updatedAt": "2026-01-28T16:59:10.592Z",
+                        "publishedAt": null,
+                        "locale": null,
+                        "user": {
+                            "id": 3,
+                            "documentId": "axaw58yksn1r7niinps8zz91",
+                            "username": "teacher"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 8,
+                "documentId": "po7g8d5ax8cnmmnyc3s8boop",
+                "Title": "React Native",
+                "Description": "dhfdfsghdfhdfgh",
+                "Technology": "React Native",
+                "Level": "Intermediate",
+                "enrollments": []
+            }
+        ]
+      '''
+    }
+  }
+}

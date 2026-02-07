@@ -1,0 +1,107 @@
+meta {
+  name: Get all enrollments
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseURL}}/api/enrollments
+  body: none
+  auth: none
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
+
+example {
+  name: Get all enrollments
+  
+  request: {
+    url: {{baseURL}}/api/enrollments
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    headers: {
+      Content-Security-Policy: img-src 'self' data: blob: https://market-assets.strapi.io strapi-ai-staging.s3.us-east-1.amazonaws.com strapi-ai-production.s3.us-east-1.amazonaws.com;media-src 'self' data: blob: strapi-ai-staging.s3.us-east-1.amazonaws.com strapi-ai-production.s3.us-east-1.amazonaws.com;connect-src 'self' https:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'
+      Referrer-Policy: no-referrer
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      X-Content-Type-Options: nosniff
+      X-DNS-Prefetch-Control: off
+      X-Download-Options: noopen
+      X-Frame-Options: SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies: none
+      Vary: Origin
+      Access-Control-Allow-Origin: 
+      Access-Control-Allow-Credentials: true
+      Content-Type: application/json; charset=utf-8
+      X-Powered-By: Strapi <strapi.io>
+      Content-Length: 920
+      Date: Thu, 29 Jan 2026 18:36:02 GMT
+      Connection: keep-alive
+      Keep-Alive: timeout=5
+    }
+  
+    status: {
+      code: OK
+      text: 200
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "data": [
+                {
+                    "id": 1,
+                    "documentId": "wnj0o49vohneq0ao3v2hpqz0",
+                    "role": "student",
+                    "enrollstatus": "pending",
+                    "createdAt": "2026-01-28T16:58:45.890Z",
+                    "updatedAt": "2026-01-28T16:58:45.890Z",
+                    "publishedAt": "2026-01-28T16:58:45.884Z"
+                },
+                {
+                    "id": 2,
+                    "documentId": "ypv2vc66ucy5x382uahcinyq",
+                    "role": "teacher",
+                    "enrollstatus": "active",
+                    "createdAt": "2026-01-28T16:59:10.592Z",
+                    "updatedAt": "2026-01-28T16:59:10.592Z",
+                    "publishedAt": "2026-01-28T16:59:10.584Z"
+                },
+                {
+                    "id": 3,
+                    "documentId": "tbi1unxty75oqrsmzaldai1t",
+                    "role": "student",
+                    "enrollstatus": "pending",
+                    "createdAt": "2026-01-28T16:59:29.140Z",
+                    "updatedAt": "2026-01-28T16:59:29.140Z",
+                    "publishedAt": "2026-01-28T16:59:29.135Z"
+                },
+                {
+                    "id": 8,
+                    "documentId": "ifo8w1n3vk71ws2ryf75vqoo",
+                    "role": "student",
+                    "enrollstatus": "pending",
+                    "createdAt": "2026-01-29T15:41:08.825Z",
+                    "updatedAt": "2026-01-29T15:41:08.825Z",
+                    "publishedAt": "2026-01-29T15:41:08.840Z"
+                }
+            ],
+            "meta": {
+                "pagination": {
+                    "page": 1,
+                    "pageSize": 25,
+                    "pageCount": 1,
+                    "total": 4
+                }
+            }
+        }
+      '''
+    }
+  }
+}

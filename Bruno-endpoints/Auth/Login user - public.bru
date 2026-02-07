@@ -1,0 +1,144 @@
+meta {
+  name: Login user - public
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseURL}}/api/auth/local
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "identifier": "student@email.com",
+    "password": "student"
+  }
+}
+
+script:post-response {
+  // Test 1: Verify response status is 200
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  // Test 2: Verify response contains a "jwt" field that is a non-empty string
+  test("Response contains a non-empty JWT token", function () {
+      const jsonData = res.getBody();
+      expect(jsonData).to.have.property("jwt");
+      expect(jsonData.jwt).to.be.a("string");
+      expect(jsonData.jwt).to.not.be.empty;
+  });
+  
+  // Test 3: Verify response contains a "user" object with required fields
+  test("Response contains user object with required fields", function () {
+      const jsonData = res.getBody();
+      expect(jsonData).to.have.property("user");
+      expect(jsonData.user).to.be.an("object");
+      expect(jsonData.user).to.have.property("id");
+      expect(jsonData.user).to.have.property("username");
+      expect(jsonData.user).to.have.property("email");
+      expect(jsonData.user).to.have.property("provider");
+      expect(jsonData.user).to.have.property("confirmed");
+      expect(jsonData.user).to.have.property("blocked");
+  });
+  
+  // Test 4: Verify user email matches request body email
+  test("User email matches request body email", function () {
+      const jsonData = res.getBody();
+      expect(jsonData.user.email).to.equal("student@email.com");
+  });
+  
+  // Test 5: Verify user provider is "local"
+  test("User provider is 'local'", function () {
+      const jsonData = res.getBody();
+      expect(jsonData.user.provider).to.equal("local");
+  });
+  
+  // Test 6: Verify user confirmed status is true
+  test("User confirmed status is true", function () {
+      const jsonData = res.getBody();
+      expect(jsonData.user.confirmed).to.be.true;
+  });
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
+
+example {
+  name: Login user - public
+  
+  request: {
+    url: {{baseURL}}/api/auth/local
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body:json: {
+      {
+        "identifier": "student@email.com",
+        "password": "student"
+      }
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Security-Policy: img-src 'self' data: blob: https://market-assets.strapi.io strapi-ai-staging.s3.us-east-1.amazonaws.com strapi-ai-production.s3.us-east-1.amazonaws.com;media-src 'self' data: blob: strapi-ai-staging.s3.us-east-1.amazonaws.com strapi-ai-production.s3.us-east-1.amazonaws.com;connect-src 'self' https:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'
+      Referrer-Policy: no-referrer
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      X-Content-Type-Options: nosniff
+      X-DNS-Prefetch-Control: off
+      X-Download-Options: noopen
+      X-Frame-Options: SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies: none
+      Vary: Origin
+      Access-Control-Allow-Origin: 
+      Access-Control-Allow-Credentials: true
+      X-RateLimit-Limit: 10
+      X-RateLimit-Remaining: 9
+      X-RateLimit-Reset: 1769711094
+      Content-Type: application/json; charset=utf-8
+      X-Powered-By: Strapi <strapi.io>
+      Content-Length: 423
+      Date: Thu, 29 Jan 2026 18:23:53 GMT
+      Connection: keep-alive
+      Keep-Alive: timeout=5
+    }
+  
+    status: {
+      code: OK
+      text: 200
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzY5NzExMDMzLCJleHAiOjE3NzIzMDMwMzN9.ydcMXhd5_nJdyYNMvRDg8Cpr-BtFzJfEuJDfXQhtCA0",
+            "user": {
+                "id": 2,
+                "documentId": "vnnicm2gz0yy5xph4ovyuvab",
+                "username": "student",
+                "email": "student@email.com",
+                "provider": "local",
+                "confirmed": true,
+                "blocked": false,
+                "createdAt": "2026-01-25T14:17:36.805Z",
+                "updatedAt": "2026-01-25T14:17:36.805Z",
+                "publishedAt": "2026-01-25T14:17:36.696Z"
+            }
+        }
+      '''
+    }
+  }
+}

@@ -1,0 +1,131 @@
+meta {
+  name: Get all users - admin
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseURL}}/api/users/all
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzcwMDU3ODAwLCJleHAiOjE3NzI2NDk4MDB9.A3CaDZKLRdEowsMiZBgUtjObK2NTcmKZjo6KezJcmlA
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
+
+example {
+  name: Get all users - auth
+  
+  request: {
+    url: {{baseURL}}/api/users/all
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    headers: {
+      content-security-policy: img-src 'self' data: blob: https://market-assets.strapi.io strapi-ai-staging.s3.us-east-1.amazonaws.com strapi-ai-production.s3.us-east-1.amazonaws.com;media-src 'self' data: blob: strapi-ai-staging.s3.us-east-1.amazonaws.com strapi-ai-production.s3.us-east-1.amazonaws.com;connect-src 'self' https:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'
+      referrer-policy: no-referrer
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-content-type-options: nosniff
+      x-dns-prefetch-control: off
+      x-download-options: noopen
+      x-frame-options: SAMEORIGIN
+      x-permitted-cross-domain-policies: none
+      vary: Origin
+      access-control-allow-origin: 
+      access-control-allow-credentials: true
+      content-type: application/json; charset=utf-8
+      x-powered-by: Strapi <strapi.io>
+      content-length: 1034
+      date: Mon, 02 Feb 2026 17:30:51 GMT
+      connection: keep-alive
+      keep-alive: timeout=5
+    }
+  
+    status: {
+      code: 200
+      text: OK
+    }
+  
+    body: {
+      type: json
+      content: '''
+        [
+          {
+            "id": 1,
+            "documentId": "sii3ou6c3zsiucmiiwq6klra",
+            "username": "mongoose",
+            "email": "mongoose@globcom.net",
+            "role": {
+              "id": 3,
+              "documentId": "l5kq387sssr68n3gjfjpynfm",
+              "name": "Admin"
+            }
+          },
+          {
+            "id": 2,
+            "documentId": "vnnicm2gz0yy5xph4ovyuvab",
+            "username": "student",
+            "email": "student@email.com",
+            "role": {
+              "id": 5,
+              "documentId": "nqme6hwf3b5v7i1u3tl6ir7w",
+              "name": "Student"
+            }
+          },
+          {
+            "id": 3,
+            "documentId": "axaw58yksn1r7niinps8zz91",
+            "username": "teacher",
+            "email": "teacher@email.com",
+            "role": {
+              "id": 4,
+              "documentId": "k6lalk21z76t2v9asap0wkjh",
+              "name": "Teacher"
+            }
+          },
+          {
+            "id": 6,
+            "documentId": "y3qjc05zopuvir850nlqo2md",
+            "username": "student1",
+            "email": "student1@test.com",
+            "role": {
+              "id": 5,
+              "documentId": "nqme6hwf3b5v7i1u3tl6ir7w",
+              "name": "Student"
+            }
+          },
+          {
+            "id": 7,
+            "documentId": "y1cwvdus7f8hs1zur40kmyif",
+            "username": "teacher1",
+            "email": "teacher1@email.com",
+            "role": {
+              "id": 4,
+              "documentId": "k6lalk21z76t2v9asap0wkjh",
+              "name": "Teacher"
+            }
+          },
+          {
+            "id": 8,
+            "documentId": "og1tk77ml4soq949nkbisrnc",
+            "username": "student2",
+            "email": "student2@email.com",
+            "role": {
+              "id": 5,
+              "documentId": "nqme6hwf3b5v7i1u3tl6ir7w",
+              "name": "Student"
+            }
+          }
+        ]
+      '''
+    }
+  }
+}

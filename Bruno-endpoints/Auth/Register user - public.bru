@@ -1,0 +1,112 @@
+meta {
+  name: Register user - public
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseURL}}/api/auth/local/register
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "username": "student2",
+    "email": "student2@email.com",
+    "password": "student2"
+  }
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
+
+example {
+  name: Register user - public
+  
+  request: {
+    url: {{baseURL}}/api/auth/local/register
+    method: POST
+    mode: json
+    headers: {
+      Content-Type: application/json
+    }
+  
+    body:json: {
+      {
+        "username": "student2",
+        "email": "student2@email.com",
+        "password": "student2"
+      }
+        
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Security-Policy: img-src 'self' data: blob: https://market-assets.strapi.io strapi-ai-staging.s3.us-east-1.amazonaws.com strapi-ai-production.s3.us-east-1.amazonaws.com;media-src 'self' data: blob: strapi-ai-staging.s3.us-east-1.amazonaws.com strapi-ai-production.s3.us-east-1.amazonaws.com;connect-src 'self' https:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'
+      Referrer-Policy: no-referrer
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      X-Content-Type-Options: nosniff
+      X-DNS-Prefetch-Control: off
+      X-Download-Options: noopen
+      X-Frame-Options: SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies: none
+      Vary: Origin
+      Access-Control-Allow-Origin: 
+      Access-Control-Allow-Credentials: true
+      X-RateLimit-Limit: 10
+      X-RateLimit-Remaining: 9
+      X-RateLimit-Reset: 1769711668
+      Content-Type: application/json; charset=utf-8
+      X-Powered-By: Strapi <strapi.io>
+      Content-Length: 682
+      Date: Thu, 29 Jan 2026 18:33:27 GMT
+      Connection: keep-alive
+      Keep-Alive: timeout=5
+    }
+  
+    status: {
+      code: OK
+      text: 200
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNzY5NzExNjA3LCJleHAiOjE3NzIzMDM2MDd9.1UhOI5g3yx1A7YCysvsrJSRsFPxy7S3Q8pkDPIlyrOE",
+            "user": {
+                "id": 8,
+                "documentId": "og1tk77ml4soq949nkbisrnc",
+                "username": "student2",
+                "email": "student2@email.com",
+                "provider": "local",
+                "confirmed": true,
+                "blocked": false,
+                "createdAt": "2026-01-29T18:33:27.320Z",
+                "updatedAt": "2026-01-29T18:33:27.320Z",
+                "publishedAt": "2026-01-29T18:33:27.321Z",
+                "role": {
+                    "id": 5,
+                    "documentId": "nqme6hwf3b5v7i1u3tl6ir7w",
+                    "name": "Student",
+                    "description": "Student access - limited access",
+                    "type": "student",
+                    "createdAt": "2026-01-25T09:54:44.075Z",
+                    "updatedAt": "2026-01-28T18:10:31.040Z",
+                    "publishedAt": "2026-01-25T09:54:44.076Z"
+                }
+            }
+        }
+      '''
+    }
+  }
+}

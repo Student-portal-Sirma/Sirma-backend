@@ -1,0 +1,173 @@
+meta {
+  name: Get logged user extended - auth
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseURL}}/api/users/me/extended
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzY5NjIzNjg4LCJleHAiOjE3NzIyMTU2ODh9.kTZM-slJ68dGMEpM1O7ukQ13M_Zvjjf6JxKjwyIvWxw
+}
+
+script:post-response {
+  // Test 1: Verify response status is 200
+  test("Status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  // Test 2: Verify response has required properties
+  test("Response has required properties", function () {
+      const jsonData = res.getBody();
+      expect(jsonData).to.have.property("id");
+      expect(jsonData).to.have.property("documentId");
+      expect(jsonData).to.have.property("username");
+      expect(jsonData).to.have.property("email");
+      expect(jsonData).to.have.property("role");
+      expect(jsonData).to.have.property("enrollments");
+  });
+  
+  // Test 3: Verify data types are correct
+  test("Data types are correct", function () {
+      const jsonData = res.getBody();
+      expect(jsonData.id).to.be.a("number");
+      expect(jsonData.documentId).to.be.a("string");
+      expect(jsonData.username).to.be.a("string");
+      expect(jsonData.email).to.be.a("string");
+      expect(jsonData.role).to.be.an("object");
+      expect(jsonData.enrollments).to.be.an("array");
+  });
+  
+  // Test 4: Verify role object has required properties
+  test("Role object has required properties", function () {
+      const jsonData = res.getBody();
+      expect(jsonData.role).to.have.property("id");
+      expect(jsonData.role).to.have.property("documentId");
+      expect(jsonData.role).to.have.property("name");
+      expect(jsonData.role.id).to.be.a("number");
+      expect(jsonData.role.documentId).to.be.a("string");
+      expect(jsonData.role.name).to.be.a("string");
+  });
+  
+  // Test 5: Verify each enrollment has required properties
+  test("Each enrollment has required properties", function () {
+      const jsonData = res.getBody();
+      jsonData.enrollments.forEach(function (enrollment, index) {
+          expect(enrollment, `Enrollment at index ${index}`).to.have.property("id");
+          expect(enrollment, `Enrollment at index ${index}`).to.have.property("documentId");
+          expect(enrollment, `Enrollment at index ${index}`).to.have.property("role");
+          expect(enrollment, `Enrollment at index ${index}`).to.have.property("enrollstatus");
+          expect(enrollment, `Enrollment at index ${index}`).to.have.property("course");
+          expect(enrollment.id).to.be.a("number");
+          expect(enrollment.documentId).to.be.a("string");
+          expect(enrollment.role).to.be.a("string");
+          expect(enrollment.enrollstatus).to.be.a("string");
+          expect(enrollment.course).to.be.an("object");
+      });
+  });
+  
+  // Test 6: Verify course object within enrollments has required properties
+  test("Course object in enrollments has required properties", function () {
+      const jsonData = res.getBody();
+      jsonData.enrollments.forEach(function (enrollment, index) {
+          const course = enrollment.course;
+          expect(course, `Course at enrollment index ${index}`).to.have.property("id");
+          expect(course, `Course at enrollment index ${index}`).to.have.property("documentId");
+          expect(course, `Course at enrollment index ${index}`).to.have.property("Title");
+          expect(course, `Course at enrollment index ${index}`).to.have.property("Level");
+          expect(course.id).to.be.a("number");
+          expect(course.documentId).to.be.a("string");
+          expect(course.Title).to.be.a("string");
+          expect(course.Level).to.be.a("string");
+      });
+  });
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
+
+example {
+  name: Get logged user extended - auth
+  
+  request: {
+    url: {{baseURL}}/api/users/me/extended
+    method: GET
+    mode: none
+  }
+  
+  response: {
+    headers: {
+      Content-Security-Policy: img-src 'self' data: blob: https://market-assets.strapi.io strapi-ai-staging.s3.us-east-1.amazonaws.com strapi-ai-production.s3.us-east-1.amazonaws.com;media-src 'self' data: blob: strapi-ai-staging.s3.us-east-1.amazonaws.com strapi-ai-production.s3.us-east-1.amazonaws.com;connect-src 'self' https:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'
+      Referrer-Policy: no-referrer
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      X-Content-Type-Options: nosniff
+      X-DNS-Prefetch-Control: off
+      X-Download-Options: noopen
+      X-Frame-Options: SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies: none
+      Vary: Origin
+      Access-Control-Allow-Origin: 
+      Access-Control-Allow-Credentials: true
+      Content-Type: application/json; charset=utf-8
+      X-Powered-By: Strapi <strapi.io>
+      Content-Length: 569
+      Date: Thu, 29 Jan 2026 18:24:39 GMT
+      Connection: keep-alive
+      Keep-Alive: timeout=5
+    }
+  
+    status: {
+      code: OK
+      text: 200
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "id": 2,
+            "documentId": "vnnicm2gz0yy5xph4ovyuvab",
+            "username": "student",
+            "email": "student@email.com",
+            "role": {
+                "id": 5,
+                "documentId": "nqme6hwf3b5v7i1u3tl6ir7w",
+                "name": "Student"
+            },
+            "enrollments": [
+                {
+                    "id": 4,
+                    "documentId": "wnj0o49vohneq0ao3v2hpqz0",
+                    "role": "student",
+                    "enrollstatus": "pending",
+                    "course": {
+                        "id": 6,
+                        "documentId": "ejabswo1qri09tm7d9qz0mlc",
+                        "Title": "React",
+                        "Level": "Intermediate"
+                    }
+                },
+                {
+                    "id": 7,
+                    "documentId": "ifo8w1n3vk71ws2ryf75vqoo",
+                    "role": "student",
+                    "enrollstatus": "pending",
+                    "course": {
+                        "id": 8,
+                        "documentId": "po7g8d5ax8cnmmnyc3s8boop",
+                        "Title": "React Native",
+                        "Level": "Intermediate"
+                    }
+                }
+            ]
+        }
+      '''
+    }
+  }
+}

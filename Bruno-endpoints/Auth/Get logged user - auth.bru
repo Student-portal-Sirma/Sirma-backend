@@ -1,0 +1,82 @@
+meta {
+  name: Get logged user - auth
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseURL}}/api/users/me
+  body: none
+  auth: bearer
+}
+
+headers {
+  ~Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY5MzM1NzY2LCJleHAiOjE3NzE5Mjc3NjZ9.b0NfMLLy9et4lsE5P_7NyN9e9ExxkGGssOQhE3VGrFw
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzY5NDQxNTg0LCJleHAiOjE3NzIwMzM1ODR9.QZ3PxaRn9oAvwOYx-7Cjk4OqkGsB3RcGTW6KzkvJr-g
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
+
+example {
+  name: Get logged user - auth
+  
+  request: {
+    url: {{baseURL}}/api/users/me
+    method: GET
+    mode: none
+    headers: {
+      ~Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY5MzM1NzY2LCJleHAiOjE3NzE5Mjc3NjZ9.b0NfMLLy9et4lsE5P_7NyN9e9ExxkGGssOQhE3VGrFw
+    }
+  }
+  
+  response: {
+    headers: {
+      Content-Security-Policy: img-src 'self' data: blob: https://market-assets.strapi.io strapi-ai-staging.s3.us-east-1.amazonaws.com strapi-ai-production.s3.us-east-1.amazonaws.com;media-src 'self' data: blob: strapi-ai-staging.s3.us-east-1.amazonaws.com strapi-ai-production.s3.us-east-1.amazonaws.com;connect-src 'self' https:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'
+      Referrer-Policy: no-referrer
+      Strict-Transport-Security: max-age=31536000; includeSubDomains
+      X-Content-Type-Options: nosniff
+      X-DNS-Prefetch-Control: off
+      X-Download-Options: noopen
+      X-Frame-Options: SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies: none
+      Vary: Origin
+      Access-Control-Allow-Origin: 
+      Access-Control-Allow-Credentials: true
+      Content-Type: application/json; charset=utf-8
+      X-Powered-By: Strapi <strapi.io>
+      Content-Length: 268
+      Date: Thu, 29 Jan 2026 18:28:17 GMT
+      Connection: keep-alive
+      Keep-Alive: timeout=5
+    }
+  
+    status: {
+      code: OK
+      text: 200
+    }
+  
+    body: {
+      type: json
+      content: '''
+        {
+            "id": 2,
+            "documentId": "vnnicm2gz0yy5xph4ovyuvab",
+            "username": "student",
+            "email": "student@email.com",
+            "provider": "local",
+            "confirmed": true,
+            "blocked": false,
+            "createdAt": "2026-01-25T14:17:36.805Z",
+            "updatedAt": "2026-01-25T14:17:36.805Z",
+            "publishedAt": "2026-01-25T14:17:36.696Z"
+        }
+      '''
+    }
+  }
+}
