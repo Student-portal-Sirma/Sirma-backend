@@ -18,17 +18,6 @@
     "Description": {
       "type": "text"
     },
-    "Technology": {
-      "type": "enumeration",
-      "required": true,
-      "enum": [
-        "Node.js",
-        "React",
-        "React Native",
-        "PostgreSQL",
-        "Docker"
-      ]
-    },
     "enrollments": {
       "type": "relation",
       "relation": "oneToMany",
@@ -51,6 +40,20 @@
     },
     "published": {
       "type": "datetime"
+    },
+    "Thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "isPublished": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
