@@ -7,7 +7,7 @@
     "displayName": "Module"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
