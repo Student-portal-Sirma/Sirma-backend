@@ -7,7 +7,7 @@
     "displayName": "Course"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -17,17 +17,6 @@
     },
     "Description": {
       "type": "text"
-    },
-    "Technology": {
-      "type": "enumeration",
-      "required": true,
-      "enum": [
-        "Node.js",
-        "React",
-        "React Native",
-        "PostgreSQL",
-        "Docker"
-      ]
     },
     "enrollments": {
       "type": "relation",
@@ -51,6 +40,13 @@
     },
     "published": {
       "type": "datetime"
+    },
+    "isPublished": {
+      "type": "boolean",
+      "default": false
+    },
+    "Thumbnail": {
+      "type": "json"
     }
   }
 }

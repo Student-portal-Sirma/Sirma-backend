@@ -15,7 +15,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2026-02-07T10:29:11.884Z"
+    "x-generation-date": "2026-02-08T16:37:13.902Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -3523,8 +3523,7 @@
         "properties": {
           "data": {
             "required": [
-              "Title",
-              "Technology"
+              "Title"
             ],
             "type": "object",
             "properties": {
@@ -3533,16 +3532,6 @@
               },
               "Description": {
                 "type": "string"
-              },
-              "Technology": {
-                "type": "string",
-                "enum": [
-                  "Node.js",
-                  "React",
-                  "React Native",
-                  "PostgreSQL",
-                  "Docker"
-                ]
               },
               "enrollments": {
                 "type": "array",
@@ -3581,6 +3570,10 @@
                 "type": "string",
                 "format": "date-time"
               },
+              "isPublished": {
+                "type": "boolean"
+              },
+              "Thumbnail": {},
               "locale": {
                 "type": "string"
               },
@@ -3640,8 +3633,7 @@
       "Course": {
         "type": "object",
         "required": [
-          "Title",
-          "Technology"
+          "Title"
         ],
         "properties": {
           "id": {
@@ -3662,16 +3654,6 @@
           },
           "Description": {
             "type": "string"
-          },
-          "Technology": {
-            "type": "string",
-            "enum": [
-              "Node.js",
-              "React",
-              "React Native",
-              "PostgreSQL",
-              "Docker"
-            ]
           },
           "enrollments": {
             "type": "array",
@@ -4423,16 +4405,6 @@
                     "Description": {
                       "type": "string"
                     },
-                    "Technology": {
-                      "type": "string",
-                      "enum": [
-                        "Node.js",
-                        "React",
-                        "React Native",
-                        "PostgreSQL",
-                        "Docker"
-                      ]
-                    },
                     "enrollments": {
                       "type": "array",
                       "items": {
@@ -4583,6 +4555,10 @@
                       "type": "string",
                       "format": "date-time"
                     },
+                    "isPublished": {
+                      "type": "boolean"
+                    },
+                    "Thumbnail": {},
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -4777,6 +4753,10 @@
             "type": "string",
             "format": "date-time"
           },
+          "isPublished": {
+            "type": "boolean"
+          },
+          "Thumbnail": {},
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -5653,16 +5633,6 @@
                         "Description": {
                           "type": "string"
                         },
-                        "Technology": {
-                          "type": "string",
-                          "enum": [
-                            "Node.js",
-                            "React",
-                            "React Native",
-                            "PostgreSQL",
-                            "Docker"
-                          ]
-                        },
                         "enrollments": {
                           "type": "array",
                           "items": {
@@ -5813,6 +5783,10 @@
                           "type": "string",
                           "format": "date-time"
                         },
+                        "isPublished": {
+                          "type": "boolean"
+                        },
+                        "Thumbnail": {},
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -6305,16 +6279,6 @@
                 },
                 "Description": {
                   "type": "string"
-                },
-                "Technology": {
-                  "type": "string",
-                  "enum": [
-                    "Node.js",
-                    "React",
-                    "React Native",
-                    "PostgreSQL",
-                    "Docker"
-                  ]
                 },
                 "enrollments": {
                   "type": "array",
@@ -7281,6 +7245,10 @@
                   "type": "string",
                   "format": "date-time"
                 },
+                "isPublished": {
+                  "type": "boolean"
+                },
+                "Thumbnail": {},
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"

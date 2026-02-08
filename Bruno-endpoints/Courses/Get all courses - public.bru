@@ -16,7 +16,7 @@ settings {
 }
 
 example {
-  name: Get all courses - public
+  name: example
   
   request: {
     url: {{baseURL}}/api/courses
@@ -26,80 +26,80 @@ example {
   
   response: {
     headers: {
-      Content-Security-Policy: img-src 'self' data: blob: https://market-assets.strapi.io strapi-ai-staging.s3.us-east-1.amazonaws.com strapi-ai-production.s3.us-east-1.amazonaws.com;media-src 'self' data: blob: strapi-ai-staging.s3.us-east-1.amazonaws.com strapi-ai-production.s3.us-east-1.amazonaws.com;connect-src 'self' https:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'
-      Referrer-Policy: no-referrer
-      Strict-Transport-Security: max-age=31536000; includeSubDomains
-      X-Content-Type-Options: nosniff
-      X-DNS-Prefetch-Control: off
-      X-Download-Options: noopen
-      X-Frame-Options: SAMEORIGIN
-      X-Permitted-Cross-Domain-Policies: none
-      Vary: Origin
-      Access-Control-Allow-Origin: 
-      Access-Control-Allow-Credentials: true
-      Content-Type: application/json; charset=utf-8
-      X-Powered-By: Strapi <strapi.io>
-      Content-Length: 983
-      Date: Thu, 29 Jan 2026 18:21:28 GMT
-      Connection: keep-alive
-      Keep-Alive: timeout=5
+      content-security-policy: img-src 'self' data: blob: https://market-assets.strapi.io strapi-ai-staging.s3.us-east-1.amazonaws.com strapi-ai-production.s3.us-east-1.amazonaws.com;media-src 'self' data: blob: strapi-ai-staging.s3.us-east-1.amazonaws.com strapi-ai-production.s3.us-east-1.amazonaws.com;connect-src 'self' https:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'
+      referrer-policy: no-referrer
+      strict-transport-security: max-age=31536000; includeSubDomains
+      x-content-type-options: nosniff
+      x-dns-prefetch-control: off
+      x-download-options: noopen
+      x-frame-options: SAMEORIGIN
+      x-permitted-cross-domain-policies: none
+      vary: Origin
+      access-control-allow-origin: 
+      access-control-allow-credentials: true
+      content-type: application/json; charset=utf-8
+      x-powered-by: Strapi <strapi.io>
+      content-length: 968
+      date: Sun, 08 Feb 2026 07:46:29 GMT
+      connection: keep-alive
+      keep-alive: timeout=5
     }
   
     status: {
-      code: OK
-      text: 200
+      code: 200
+      text: OK
     }
   
     body: {
       type: json
       content: '''
         {
-            "data": [
-                {
-                    "id": 13,
-                    "documentId": "ejabswo1qri09tm7d9qz0mlc",
-                    "Title": "React",
-                    "Description": "OJHkjhn;lhn;lkjnl",
-                    "Technology": "React",
-                    "createdAt": "2026-01-25T15:26:49.644Z",
-                    "updatedAt": "2026-01-28T18:37:16.460Z",
-                    "publishedAt": "2026-01-28T18:37:16.483Z",
-                    "Level": "Intermediate",
-                    "published": null
-                },
-                {
-                    "id": 14,
-                    "documentId": "po7g8d5ax8cnmmnyc3s8boop",
-                    "Title": "React Native",
-                    "Description": "dhfdfsghdfhdfgh",
-                    "Technology": "React Native",
-                    "createdAt": "2026-01-25T15:27:17.484Z",
-                    "updatedAt": "2026-01-28T18:37:30.173Z",
-                    "publishedAt": "2026-01-28T18:37:30.190Z",
-                    "Level": "Intermediate",
-                    "published": null
-                },
-                {
-                    "id": 15,
-                    "documentId": "pedvbl3hfn2ishrv154dosgg",
-                    "Title": "Node.js Fundamentals",
-                    "Description": "Introduction to Node.js, event loop, async programming",
-                    "Technology": "Node.js",
-                    "createdAt": "2026-01-21T18:41:06.970Z",
-                    "updatedAt": "2026-01-28T18:37:51.874Z",
-                    "publishedAt": "2026-01-28T18:37:51.891Z",
-                    "Level": "Beginner",
-                    "published": null
-                }
-            ],
-            "meta": {
-                "pagination": {
-                    "page": 1,
-                    "pageSize": 25,
-                    "pageCount": 1,
-                    "total": 3
-                }
+          "data": [
+            {
+              "id": 13,
+              "documentId": "ejabswo1qri09tm7d9qz0mlc",
+              "Title": "React",
+              "Description": "OJHkjhn;lhn;lkjnl",
+              "createdAt": "2026-01-25T15:26:49.644Z",
+              "updatedAt": "2026-01-28T18:37:16.460Z",
+              "publishedAt": "2026-01-28T18:37:16.483Z",
+              "Level": "Intermediate",
+              "published": null,
+              "isPublished": null
+            },
+            {
+              "id": 14,
+              "documentId": "po7g8d5ax8cnmmnyc3s8boop",
+              "Title": "React Native",
+              "Description": "dhfdfsghdfhdfgh",
+              "createdAt": "2026-01-25T15:27:17.484Z",
+              "updatedAt": "2026-01-28T18:37:30.173Z",
+              "publishedAt": "2026-01-28T18:37:30.190Z",
+              "Level": "Intermediate",
+              "published": null,
+              "isPublished": null
+            },
+            {
+              "id": 15,
+              "documentId": "pedvbl3hfn2ishrv154dosgg",
+              "Title": "Node.js Fundamentals",
+              "Description": "Introduction to Node.js, event loop, async programming",
+              "createdAt": "2026-01-21T18:41:06.970Z",
+              "updatedAt": "2026-01-28T18:37:51.874Z",
+              "publishedAt": "2026-01-28T18:37:51.891Z",
+              "Level": "Beginner",
+              "published": null,
+              "isPublished": null
             }
+          ],
+          "meta": {
+            "pagination": {
+              "page": 1,
+              "pageSize": 25,
+              "pageCount": 1,
+              "total": 3
+            }
+          }
         }
       '''
     }
