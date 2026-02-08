@@ -499,7 +499,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     module: Schema.Attribute.Relation<"manyToOne", "api::module.module">;
     published: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
-    Thumbnail: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    Thumbnail: Schema.Attribute.JSON;
     Title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &

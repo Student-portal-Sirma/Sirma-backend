@@ -41,19 +41,12 @@
     "published": {
       "type": "datetime"
     },
-    "Thumbnail": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "isPublished": {
       "type": "boolean",
       "default": false
+    },
+    "Thumbnail": {
+      "type": "json"
     }
   }
 }
