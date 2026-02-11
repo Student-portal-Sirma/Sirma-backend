@@ -15,7 +15,7 @@ export default {
                         fields: ["role", "enrollstatus"],
                         populate: {
                             course: {
-                                fields: ["Title", "Level"],
+                                fields: ["title", "level"],
                             },
                         },
                     },

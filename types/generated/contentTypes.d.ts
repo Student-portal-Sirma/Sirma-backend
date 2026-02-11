@@ -499,14 +499,14 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
         createdAt: Schema.Attribute.DateTime;
         createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &
             Schema.Attribute.Private;
-        Description: Schema.Attribute.Text;
+        description: Schema.Attribute.Text;
         enrollments: Schema.Attribute.Relation<
             "oneToMany",
             "api::enrollment.enrollment"
         >;
         isPublished: Schema.Attribute.Boolean &
             Schema.Attribute.DefaultTo<false>;
-        Level: Schema.Attribute.Enumeration<
+        level: Schema.Attribute.Enumeration<
             ["Beginner", "Intermediate", "Advanced"]
         >;
         locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -518,8 +518,8 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
         module: Schema.Attribute.Relation<"manyToOne", "api::module.module">;
         published: Schema.Attribute.DateTime;
         publishedAt: Schema.Attribute.DateTime;
-        Thumbnail: Schema.Attribute.JSON;
-        Title: Schema.Attribute.String & Schema.Attribute.Required;
+        thumbnail: Schema.Attribute.JSON;
+        title: Schema.Attribute.String & Schema.Attribute.Required;
         updatedAt: Schema.Attribute.DateTime;
         updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &
             Schema.Attribute.Private;
@@ -577,7 +577,7 @@ export interface ApiModuleModule extends Struct.CollectionTypeSchema {
         createdAt: Schema.Attribute.DateTime;
         createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &
             Schema.Attribute.Private;
-        Description: Schema.Attribute.Text;
+        description: Schema.Attribute.Text;
         locale: Schema.Attribute.String & Schema.Attribute.Private;
         localizations: Schema.Attribute.Relation<
             "oneToMany",
@@ -585,7 +585,7 @@ export interface ApiModuleModule extends Struct.CollectionTypeSchema {
         > &
             Schema.Attribute.Private;
         publishedAt: Schema.Attribute.DateTime;
-        Title: Schema.Attribute.String & Schema.Attribute.Required;
+        title: Schema.Attribute.String & Schema.Attribute.Required;
         updatedAt: Schema.Attribute.DateTime;
         updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &
             Schema.Attribute.Private;
@@ -613,8 +613,8 @@ export interface ApiTopicTopic extends Struct.CollectionTypeSchema {
         > &
             Schema.Attribute.Private;
         publishedAt: Schema.Attribute.DateTime;
-        Resources: Schema.Attribute.DynamicZone<["documents.docs"]>;
-        Title: Schema.Attribute.String & Schema.Attribute.Required;
+        resourses: Schema.Attribute.JSON;
+        title: Schema.Attribute.String & Schema.Attribute.Required;
         updatedAt: Schema.Attribute.DateTime;
         updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &
             Schema.Attribute.Private;

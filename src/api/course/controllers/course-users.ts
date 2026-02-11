@@ -4,7 +4,7 @@ export default {
 
         const courses = await strapi.documents("api::course.course").findOne({
             documentId,
-            fields: ["Title", "Description", "Level"],
+            fields: ["title", "description", "level"],
             populate: {
                 enrollments: {
                     populate: {
