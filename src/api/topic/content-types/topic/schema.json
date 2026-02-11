@@ -11,15 +11,12 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "Resources": {
-      "type": "dynamiczone",
-      "components": [
-        "documents.docs"
-      ]
+    "resourses": {
+      "type": "json"
     }
   }
 }
