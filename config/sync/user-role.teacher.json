@@ -1,0 +1,79 @@
+{
+  "documentId": "k6lalk21z76t2v9asap0wkjh",
+  "name": "Teacher",
+  "description": "Access for teachers - full access",
+  "type": "teacher",
+  "locale": null,
+  "permissions": [
+    {
+      "documentId": "mqz1aygnkgpyn38g0b2gtnvl",
+      "action": "api::course.course.create",
+      "locale": null
+    },
+    {
+      "documentId": "wpt4xjfb85ivka5nq3xgg280",
+      "action": "api::course.course.delete",
+      "locale": null
+    },
+    {
+      "documentId": "wjuab6ysf0lmtp4agz9a5v8b",
+      "action": "api::course.course.find",
+      "locale": null
+    },
+    {
+      "documentId": "l0hkg6wt2bcdz3dyfc1a2nz8",
+      "action": "api::course.course.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "syj3ursanbhrxnyle64sqn2n",
+      "action": "api::course.course.update",
+      "locale": null
+    },
+    {
+      "documentId": "stpqnhhi72gal5k97ee0twen",
+      "action": "api::course.courses-teachers.find",
+      "locale": null
+    },
+    {
+      "documentId": "bxj0kfgx9lzai7yl4lihbtf4",
+      "action": "api::user.me.extended",
+      "locale": null
+    },
+    {
+      "documentId": "wqjzsphmjz1ekcfqtfflxb1p",
+      "action": "plugin::users-permissions.auth.logout",
+      "locale": null
+    },
+    {
+      "documentId": "xgwm2xfa13afhyaj67s3p3lg",
+      "action": "plugin::users-permissions.auth.refresh",
+      "locale": null
+    },
+    {
+      "documentId": "t9eruy4rnfsfcjzvlccgcdi9",
+      "action": "plugin::users-permissions.role.find",
+      "locale": null
+    },
+    {
+      "documentId": "fwv7jtnd23xdoba5smwlw825",
+      "action": "plugin::users-permissions.role.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "twrtpmtb1y31bhstbi8dhkek",
+      "action": "plugin::users-permissions.user.find",
+      "locale": null
+    },
+    {
+      "documentId": "fhxtvr8eszew02cz5piknzk8",
+      "action": "plugin::users-permissions.user.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "ifxmi6uqoeyvd5myjb3fv7s2",
+      "action": "plugin::users-permissions.user.me",
+      "locale": null
+    }
+  ]
+}
