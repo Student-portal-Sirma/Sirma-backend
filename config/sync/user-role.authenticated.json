@@ -1,0 +1,79 @@
+{
+  "documentId": "h707rvi95diricr39rl5b6eq",
+  "name": "Authenticated",
+  "description": "Default role given to authenticated user.",
+  "type": "authenticated",
+  "locale": null,
+  "permissions": [
+    {
+      "documentId": "l7b2gm6s9kqhyzp77uigwlc3",
+      "action": "api::course.course.find",
+      "locale": null
+    },
+    {
+      "documentId": "t46vgfuk2uf0re6pvuyk3rd8",
+      "action": "api::course.course.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "lshayufa8wnfev1dy2xha5et",
+      "action": "api::course.courses-teachers.find",
+      "locale": null
+    },
+    {
+      "documentId": "s8ero9nacm395h1ga092zwl1",
+      "action": "api::module.module.find",
+      "locale": null
+    },
+    {
+      "documentId": "p21ygzlt557utv75d54s6olt",
+      "action": "api::module.module.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "if6r29th0zc9fjryvpbgv8w8",
+      "action": "api::user.me.extended",
+      "locale": null
+    },
+    {
+      "documentId": "cv6mc8kh51qmpl7h78ygebjl",
+      "action": "plugin::users-permissions.auth.changePassword",
+      "locale": null
+    },
+    {
+      "documentId": "pdx1nspz3msnbiqwcicetrh3",
+      "action": "plugin::users-permissions.auth.logout",
+      "locale": null
+    },
+    {
+      "documentId": "s4qhjh7i3jbi044x5pxjm1g6",
+      "action": "plugin::users-permissions.auth.refresh",
+      "locale": null
+    },
+    {
+      "documentId": "naauezjsqgpubc5j79s5in9y",
+      "action": "plugin::users-permissions.role.find",
+      "locale": null
+    },
+    {
+      "documentId": "ny84xzhis2ni6mgfnu3yf5qe",
+      "action": "plugin::users-permissions.role.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "i9zy7yv48y68fwhx44rdenq9",
+      "action": "plugin::users-permissions.user.find",
+      "locale": null
+    },
+    {
+      "documentId": "v1rdxxoj7l7iqs2ubtnxlgp4",
+      "action": "plugin::users-permissions.user.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "d4i3eov3ze9jgo1hn48i0awn",
+      "action": "plugin::users-permissions.user.me",
+      "locale": null
+    }
+  ]
+}

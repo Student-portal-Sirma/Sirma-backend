@@ -1,0 +1,74 @@
+{
+  "documentId": "nqme6hwf3b5v7i1u3tl6ir7w",
+  "name": "Student",
+  "description": "Student access - limited access",
+  "type": "student",
+  "locale": null,
+  "permissions": [
+    {
+      "documentId": "n5787zfccs8l1wqjdk9ljh7j",
+      "action": "api::course.course.find",
+      "locale": null
+    },
+    {
+      "documentId": "szlytd334lcza5vpbywkhxcy",
+      "action": "api::course.course.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "ew9py6ni3vrjywhaanp636mu",
+      "action": "api::enrollment.enrollments-new.create",
+      "locale": null
+    },
+    {
+      "documentId": "tpbgoqke3iqy9mdvob6ztaow",
+      "action": "api::module.module.find",
+      "locale": null
+    },
+    {
+      "documentId": "ehsafs5oega4dikwxkoa0spu",
+      "action": "api::module.module.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "tulrs2rgk3xtzl50czxgirut",
+      "action": "api::user.me.extended",
+      "locale": null
+    },
+    {
+      "documentId": "a40kvftd4vqz4m7x2wgmse9x",
+      "action": "plugin::users-permissions.auth.logout",
+      "locale": null
+    },
+    {
+      "documentId": "ff9t13eecz01bcgnhzdjkxby",
+      "action": "plugin::users-permissions.auth.refresh",
+      "locale": null
+    },
+    {
+      "documentId": "jzr5gzaojazalwrns529ofsi",
+      "action": "plugin::users-permissions.role.find",
+      "locale": null
+    },
+    {
+      "documentId": "rue1bm1ep2kgeedyl5zdtjop",
+      "action": "plugin::users-permissions.role.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "h920fy3kinpzk5nxyysgbflh",
+      "action": "plugin::users-permissions.user.find",
+      "locale": null
+    },
+    {
+      "documentId": "giy4h5ya9lahruymqih7tgfr",
+      "action": "plugin::users-permissions.user.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "byhsopr2t7trlbryboghrxtg",
+      "action": "plugin::users-permissions.user.me",
+      "locale": null
+    }
+  ]
+}

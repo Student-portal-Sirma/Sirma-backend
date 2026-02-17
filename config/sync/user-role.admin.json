@@ -1,0 +1,109 @@
+{
+  "documentId": "l5kq387sssr68n3gjfjpynfm",
+  "name": "Admin",
+  "description": "Full access",
+  "type": "admin",
+  "locale": null,
+  "permissions": [
+    {
+      "documentId": "iy67ui6qluh9n8o2zglu1qv5",
+      "action": "api::course.course-users.extended",
+      "locale": null
+    },
+    {
+      "documentId": "anc60ynxk31ce0lnlmeqs9jz",
+      "action": "api::course.course.create",
+      "locale": null
+    },
+    {
+      "documentId": "cmxha2f7ft13bqrej8jsgbd3",
+      "action": "api::course.course.delete",
+      "locale": null
+    },
+    {
+      "documentId": "xeox79641bufv5nn5l98elsq",
+      "action": "api::course.course.find",
+      "locale": null
+    },
+    {
+      "documentId": "vxtmmm2c4mn54hxns0quj5xl",
+      "action": "api::course.course.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "fc39bjj0ibnd9u4oxhgok10t",
+      "action": "api::course.course.update",
+      "locale": null
+    },
+    {
+      "documentId": "hmyasmucvuzv4pja7r5ry6oe",
+      "action": "api::course.courses-teachers.find",
+      "locale": null
+    },
+    {
+      "documentId": "fdfe3klmlwfhh8y24nw4xxil",
+      "action": "api::enrollment.enrollment.find",
+      "locale": null
+    },
+    {
+      "documentId": "sgdhfjdj3bi5stcw4w6ta00p",
+      "action": "api::enrollment.enrollment.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "ejkoywfy38s0z6w8n4aqmv5b",
+      "action": "api::user.all.find",
+      "locale": null
+    },
+    {
+      "documentId": "z5fwi025pmhbqeps6362p7b0",
+      "action": "api::user.me.extended",
+      "locale": null
+    },
+    {
+      "documentId": "qnyvrfnwvh58nfuup71d0rbz",
+      "action": "plugin::users-permissions.auth.logout",
+      "locale": null
+    },
+    {
+      "documentId": "bc7v51fjlkaw7tqz7dp00vrr",
+      "action": "plugin::users-permissions.auth.refresh",
+      "locale": null
+    },
+    {
+      "documentId": "vi69c0vkde9y1ho51be4h6v4",
+      "action": "plugin::users-permissions.role.createRole",
+      "locale": null
+    },
+    {
+      "documentId": "tshyj75x4xflbscyjqy791vl",
+      "action": "plugin::users-permissions.role.deleteRole",
+      "locale": null
+    },
+    {
+      "documentId": "z9qr5rjf2xqfkrr9nvnwsnt2",
+      "action": "plugin::users-permissions.role.find",
+      "locale": null
+    },
+    {
+      "documentId": "a8ratx7wr66kf7zy2wbzt1q4",
+      "action": "plugin::users-permissions.role.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "xbcm42vsuwu36cbmpkz1kmox",
+      "action": "plugin::users-permissions.user.find",
+      "locale": null
+    },
+    {
+      "documentId": "pdpfkvpsnmrot1ux6jwc7cqq",
+      "action": "plugin::users-permissions.user.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "u6lqpau9m9i52gk8c05o4fzp",
+      "action": "plugin::users-permissions.user.me",
+      "locale": null
+    }
+  ]
+}

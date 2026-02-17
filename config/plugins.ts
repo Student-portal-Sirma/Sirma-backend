@@ -37,4 +37,13 @@ export default ({ env }) => ({
             },
         },
     },
+    "config-sync": {
+        enabled: true,
+        config: {
+            importOnBootstrap: env.bool(
+                "CONFIG_SYNC_IMPORT_ON_BOOTSTRAP",
+                true,
+            ),
+        },
+    },
 });

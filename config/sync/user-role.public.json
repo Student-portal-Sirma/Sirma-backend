@@ -1,0 +1,119 @@
+{
+  "documentId": "xk383dxyseqo4n9trdr83mmg",
+  "name": "Public",
+  "description": "Default role given to unauthenticated user.",
+  "type": "public",
+  "locale": null,
+  "permissions": [
+    {
+      "documentId": "rg516lbm4qbu613scr9subbc",
+      "action": "api::course.course.find",
+      "locale": null
+    },
+    {
+      "documentId": "fwn39tg59382onpdz91bgoug",
+      "action": "api::course.course.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "uu8wsu3h1j15ephyb3ntoadd",
+      "action": "api::course.courses-teachers.find",
+      "locale": null
+    },
+    {
+      "documentId": "t2lslmp9vxhssa8esu8shvtw",
+      "action": "api::module.module-courses-teachers.extended",
+      "locale": null
+    },
+    {
+      "documentId": "qxglcy37p3sr65h3aoswx37q",
+      "action": "api::module.module.find",
+      "locale": null
+    },
+    {
+      "documentId": "sexgnjzx0ktbebwf9iosdv7a",
+      "action": "api::module.module.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "pytc2wigefhgxxbnsp6rtgnl",
+      "action": "api::topic.topic.find",
+      "locale": null
+    },
+    {
+      "documentId": "f7jvg04e0awr9s8ik2hys3ld",
+      "action": "api::topic.topic.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "q204n8kgt5y3dd16if22veit",
+      "action": "api::user.teachers.find",
+      "locale": null
+    },
+    {
+      "documentId": "v8b0wh20edbi0s34wyrl6brh",
+      "action": "plugin::users-permissions.auth.callback",
+      "locale": null
+    },
+    {
+      "documentId": "c8qvuu2fqdrlegrppn7byx4y",
+      "action": "plugin::users-permissions.auth.connect",
+      "locale": null
+    },
+    {
+      "documentId": "heeyv97rpofm0g6oq9rs2wmi",
+      "action": "plugin::users-permissions.auth.emailConfirmation",
+      "locale": null
+    },
+    {
+      "documentId": "bts8vefmvxzfjlnz32rimuwc",
+      "action": "plugin::users-permissions.auth.forgotPassword",
+      "locale": null
+    },
+    {
+      "documentId": "teqw4zcrzs98silhii7ybe08",
+      "action": "plugin::users-permissions.auth.refresh",
+      "locale": null
+    },
+    {
+      "documentId": "f8gwvyfzr68e0epsmr3yf575",
+      "action": "plugin::users-permissions.auth.register",
+      "locale": null
+    },
+    {
+      "documentId": "evgg8dj27cvyuz09g7vy63ow",
+      "action": "plugin::users-permissions.auth.resetPassword",
+      "locale": null
+    },
+    {
+      "documentId": "q2frhhpzauprqqctoet4qwf5",
+      "action": "plugin::users-permissions.auth.sendEmailConfirmation",
+      "locale": null
+    },
+    {
+      "documentId": "yvf6ppzcu0hs0bgmfbx6mqxq",
+      "action": "plugin::users-permissions.role.find",
+      "locale": null
+    },
+    {
+      "documentId": "b3o4p3x0z6v097dkje9vlcdi",
+      "action": "plugin::users-permissions.role.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "caagrqyuuge9c9gt0gijc2e8",
+      "action": "plugin::users-permissions.user.find",
+      "locale": null
+    },
+    {
+      "documentId": "hybejtoqpt81v7q6io9c4n85",
+      "action": "plugin::users-permissions.user.findOne",
+      "locale": null
+    },
+    {
+      "documentId": "dhk387vf4jy6jeiynyimebf9",
+      "action": "plugin::users-permissions.user.me",
+      "locale": null
+    }
+  ]
+}
