@@ -1,0 +1,28 @@
+{
+  "key": "core_admin_project-settings",
+  "value": {
+    "menuLogo": {
+      "name": "b_sirma-e8ccf22fcf.png",
+      "hash": "b_sirma_e8ccf22fcf_f52cb83fcb",
+      "url": "/uploads/b_sirma_e8ccf22fcf_f52cb83fcb.png",
+      "width": 645,
+      "height": 362,
+      "ext": ".png",
+      "size": 12.23,
+      "provider": "local"
+    },
+    "authLogo": {
+      "name": "b_sirma-e8ccf22fcf.png",
+      "hash": "b_sirma_e8ccf22fcf_e5b127f74c",
+      "url": "/uploads/b_sirma_e8ccf22fcf_e5b127f74c.png",
+      "width": 645,
+      "height": 362,
+      "ext": ".png",
+      "size": 12.23,
+      "provider": "local"
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

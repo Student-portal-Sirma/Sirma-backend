@@ -518,6 +518,10 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
         module: Schema.Attribute.Relation<"manyToOne", "api::module.module">;
         published: Schema.Attribute.DateTime;
         publishedAt: Schema.Attribute.DateTime;
+        resources: Schema.Attribute.Relation<
+            "manyToMany",
+            "api::resource.resource"
+        >;
         thumbnail: Schema.Attribute.JSON;
         title: Schema.Attribute.String & Schema.Attribute.Required;
         updatedAt: Schema.Attribute.DateTime;
@@ -586,6 +590,41 @@ export interface ApiModuleModule extends Struct.CollectionTypeSchema {
             Schema.Attribute.Private;
         publishedAt: Schema.Attribute.DateTime;
         title: Schema.Attribute.String & Schema.Attribute.Required;
+        updatedAt: Schema.Attribute.DateTime;
+        updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &
+            Schema.Attribute.Private;
+    };
+}
+
+export interface ApiResourceResource extends Struct.CollectionTypeSchema {
+    collectionName: "resources";
+    info: {
+        displayName: "Resource";
+        pluralName: "resources";
+        singularName: "resource";
+    };
+    options: {
+        draftAndPublish: false;
+    };
+    attributes: {
+        courses: Schema.Attribute.Relation<"manyToMany", "api::course.course">;
+        createdAt: Schema.Attribute.DateTime;
+        createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &
+            Schema.Attribute.Private;
+        locale: Schema.Attribute.String & Schema.Attribute.Private;
+        localizations: Schema.Attribute.Relation<
+            "oneToMany",
+            "api::resource.resource"
+        > &
+            Schema.Attribute.Private;
+        mediaURL: Schema.Attribute.JSON;
+        publishedAt: Schema.Attribute.DateTime;
+        title: Schema.Attribute.String &
+            Schema.Attribute.Required &
+            Schema.Attribute.Unique &
+            Schema.Attribute.SetMinMaxLength<{
+                minLength: 3;
+            }>;
         updatedAt: Schema.Attribute.DateTime;
         updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> &
             Schema.Attribute.Private;
@@ -1148,6 +1187,7 @@ declare module "@strapi/strapi" {
             "api::course.course": ApiCourseCourse;
             "api::enrollment.enrollment": ApiEnrollmentEnrollment;
             "api::module.module": ApiModuleModule;
+            "api::resource.resource": ApiResourceResource;
             "api::topic.topic": ApiTopicTopic;
             "plugin::content-releases.release": PluginContentReleasesRelease;
             "plugin::content-releases.release-action": PluginContentReleasesReleaseAction;
